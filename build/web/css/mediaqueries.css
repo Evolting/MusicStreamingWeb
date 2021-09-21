@@ -121,7 +121,7 @@
   @media screen and (min-width: 992px) {
     /* HEADER */
     header {
-      background: rgba(0, 0, 0, 0.6);
+      background: black;
       height: 8rem;
     }
   
@@ -130,7 +130,7 @@
     }
   
     .header-logo img {
-      width: 13rem;
+      width: 10rem;
     }
   
     .nav-desktop {
