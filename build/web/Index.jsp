@@ -23,7 +23,7 @@
     <header>
         <div class="header-container">
             <div class="header-logo">
-                <a class="nav-link text-dark" asp-area="" asp-page="/Index"><img src="https://about.gitlab.com/images/press/logo/png/gitlab-icon-1-color-black-rgb.png" style="color:white" /></a>
+                <a class="nav-link text-dark" asp-area="" asp-page="/Index"><img src="img/logo.png" style="color:white; width: 35%" /></a>
             </div>
             <nav class="nav-mobile">
                 <!-- Profile -->
@@ -124,7 +124,7 @@
                         <div class="album-info">
                             <h2>FRANCHISE (feat. Young Thug & M.I.A.)</h2>
                             <h4>Travis Scott</h4>
-                            <a href="#">PLAY NOW</a>
+                            <a href="loadPlayer">PLAY NOW</a>
                         </div>
                     </div>
                     <!-- ZAYN -->
@@ -133,7 +133,7 @@
                         <div class="album-info">
                             <h2>Better</h2>
                             <h4>ZAYN</h4>
-                            <a href="#">PLAY NOW</a>
+                            <a href="loadPlayer">PLAY NOW</a>
                         </div>
                     </div>
                     <!-- Joji -->
@@ -142,7 +142,7 @@
                         <div class="album-info">
                             <h2>Justin Bieber</h2>
                             <h4>Joji</h4>
-                            <a href="#">PLAY NOW</a>
+                            <a href="loadPlayer">PLAY NOW</a>
                         </div>
                     </div>
                     <!-- Jennifer Lopez -->
@@ -151,7 +151,7 @@
                         <div class="album-info">
                             <h2>Happier Than Ever</h2>
                             <h4>Billie Eilish</h4>
-                            <a href="#">PLAY NOW</a>
+                            <a href="loadPlayer">PLAY NOW</a>
                         </div>
                     </div>
                     <!-- Machine Gun Kelly -->
@@ -160,7 +160,7 @@
                         <div class="album-info">
                             <h2>Vu Cat Tuong</h2>
                             <h4>Album Playlist</h4>
-                            <a href="#">PLAY NOW</a>
+                            <a href="loadPlayer">PLAY NOW</a>
                         </div>
                     </div>
                     <!-- Cold -->
@@ -169,7 +169,7 @@
                         <div class="album-info">
                             <h2>Year Collection</h2>
                             <h4>Best Song US-UK</h4>
-                            <a href="#">PLAY NOW</a>
+                            <a href="loadPlayer">PLAY NOW</a>
                         </div>
                     </div>
                 </div>
@@ -179,7 +179,7 @@
         <footer>
             <nav class="footer-nav">
                 <div class="logo-footer">
-                    <a href="#"><img src="https://about.gitlab.com/images/press/logo/png/gitlab-icon-1-color-black-rgb.png" /></a>
+                    <a href="#"><img src="img/logo.png" style="color:white; width: 35%" /></a>
                 </div>
                 <div class="top-links">
                     <div class="company-links">

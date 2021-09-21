@@ -24,13 +24,13 @@
             <div class="side_bar_home">
                 <div class="sidebar_option">
                     <i class="fas fa-home"></i> <p>
-                        <a href="home"><p>Home</p></a>
+                        <a href="home">Home</a>
                     </p>
 
                 </div>
                 <div class="sidebar_option">
-                    <i class="fas fa-search"></i><p>Search</p>
-
+                    <i class="fas fa-search" aria-hidden="true"></i><p>Search</p>
+                    
                 </div>
                 <div class="sidebar_option">
                     <i class="fas fa-swatchbook"></i> <p>
@@ -53,42 +53,7 @@
                     </p>
 
                 </div>
-                <div class="sidebar_option">
-                    <i class="fas fa-record-vinyl"></i><p>
-                        Hip hop
-                    </p>
 
-                </div>
-                <div class="sidebar_option">
-                    <i class="fas fa-record-vinyl"></i><p>
-                        Hip hop
-                    </p>
-
-                </div>
-                <div class="sidebar_option">
-                    <i class="fas fa-record-vinyl"></i><p>
-                        Hip hop
-                    </p>
-
-                </div>
-                <div class="sidebar_option">
-                    <i class="fas fa-record-vinyl"></i><p>
-                        Hip hop
-                    </p>
-
-                </div>
-                <div class="sidebar_option">
-                    <i class="fas fa-record-vinyl"></i><p>
-                        Hip hop
-                    </p>
-
-                </div>
-                <div class="sidebar_option">
-                    <i class="fas fa-record-vinyl"></i><p>
-                        Hip hop
-                    </p>
-
-                </div>
             </div>
             <div class="colection_body">
                 <div class="body_info">
