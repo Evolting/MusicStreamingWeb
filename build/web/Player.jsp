@@ -24,7 +24,7 @@
             <div class="side_bar_home">
                 <div class="sidebar_option">
                     <i class="fas fa-home"></i> <p>
-                        Home
+                        <a href="home"><p>Home</p></a>
                     </p>
 
                 </div>

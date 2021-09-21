@@ -204,7 +204,7 @@
                         <ul>
                             <li>USEFUL LINKS</li>
                             <li><a href="#">Help</a></li>
-                            <li><a href="#">Web Player</a></li>
+                            <li><a href="loadPlayer">Web Player</a></li>
                             <li><a href="#">Free Mobile App</a></li>
                         </ul>
                     </div>
