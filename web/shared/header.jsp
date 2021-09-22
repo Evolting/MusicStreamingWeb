@@ -72,7 +72,7 @@
                     <ul>
                         <li >
                             <div class="sample two">
-                                <input class="search" type="text" name="search" placeholder="search">
+                                <input class="search" type="text" name="search" placeholder="Search">
                                 <button type="submit" class="btn btn-search fa fa-search"></button>
                                 <button type="reset" class="btn btn-reset fa fa-times"></button>
                             </div>

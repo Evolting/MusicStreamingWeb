@@ -7,16 +7,19 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.cloudinary.*;
+import com.cloudinary.utils.ObjectUtils;
 
 /**
  *
  * @author nvlon
  */
-public class PlayerServlet extends HttpServlet {
+public class CloudinaryServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,10 +38,10 @@ public class PlayerServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet PlayerServlet</title>");            
+            out.println("<title>Servlet CloudinaryServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet PlayerServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CloudinaryServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -56,7 +59,17 @@ public class PlayerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("Player.jsp").forward(request, response);
+        Map config = ObjectUtils.asMap(
+                "cloud_name", "djhjuqgne",
+                "api_key", "767642598961942",
+                "api_secret", "4HaFBxqwnCTr2buPhQ2suV-aWPk");
+        Cloudinary cloudinary = new Cloudinary(config);
+
+        try {
+            System.out.println(cloudinary.api().resources(ObjectUtils.emptyMap()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -70,7 +83,7 @@ public class PlayerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        processRequest(request, response);
     }
 
     /**

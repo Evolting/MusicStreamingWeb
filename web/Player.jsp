@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,19 +20,19 @@
     </head>
     <body>
         <%@include file="shared/header.jsp" %>
-        
+
         <div class="player">
             <div class="player_body">
-                <div class="side_bar_home">
+                <div class="side_bar_home">                  
                     <div class="sidebar_option">
                         <i class="fas fa-home"></i>
                         <p><a href="home">Home</a></p>
 
                     </div>
-                    <div class="sidebar_option">
-                        <i class="fas fa-search"></i><p>Search</p>
-
-                    </div>
+                    <!--                    <div class="sidebar_option">
+                                            <i class="fas fa-search"></i><p>Search</p>
+                    
+                                        </div>-->
                     <div class="sidebar_option">
                         <i class="fas fa-swatchbook"></i> <p>
                             Your Library
@@ -157,6 +158,7 @@
                 </div>
             </div>
             <div class="player_footer">
+                
                 <div class="footer_left">
                     <img class="song_playing" src="https://upload.wikimedia.org/wikipedia/vi/4/4b/Ariana_Grande_-_Dangerous_Woman_%28Official_Album_Cover%29.png" />
                     <div class="song_info">
@@ -191,6 +193,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
     </body>
 </html>
