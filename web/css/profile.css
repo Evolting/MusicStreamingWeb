@@ -89,7 +89,7 @@ i{
 i:hover{
     color: var(--primary-color);
 }
-button{
+.submit,.cancel{
     margin:30px 30px ;
     padding: 1.5rem 4.5rem;
     border-radius: 3rem;
@@ -101,7 +101,7 @@ button{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-button:hover {
+.submit:hover {
     background: var(--white);
     color: var(--black);
   }

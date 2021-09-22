@@ -15,11 +15,12 @@
         <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/search.css">
         <link rel="stylesheet" href="css/mediaqueries.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
               asp-append-version="true" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Profile</title>
+        <title>Edit Profile</title>
     </head>
 
     <body>
@@ -77,15 +78,17 @@
                         <input type="text">
                         <h2 >Sex</h2>
                         <select name="sex" style="font-size:medium;font-weight:bold;">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
+                            <option value="volvo">Male</option>
+                            <option value="saab">Female</option>
+                            <option value="mercedes">Other</option>
                         </select>
                         <h2 >Phone number</h2>
                         <input type="text">
+                        <h2 >Phone number</h2>
+                        <input type="text">
                         <div style="display: flex; justify-content:flex-end">
-                            <button href="editProfile" style="background-color: white;color:black">Cancel</button>
-                            <button href="#">Save</button>
+                            <button class="cancel" href="#" style="background-color: white;color:black">Cancel</button>
+                            <button class="submit" href="#">Save</button>
                         </div>
 
                     </form>

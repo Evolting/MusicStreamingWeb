@@ -97,7 +97,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <a href="editProfile"><button>Edit profile</button></a>
+                    <a href="editProfile"><button class="submit">Edit profile</button></a>
                 </div>
 
             </div>
