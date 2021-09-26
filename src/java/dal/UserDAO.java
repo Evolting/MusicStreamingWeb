@@ -16,17 +16,17 @@ import model.User;
  *
  * @author HP
  */
-public class UserDAO extends MyDAO{
-    
+public class UserDAO extends MyDAO {
+
     public User getUser(String username, String password) {
         xSql = "select * from account where username = ? and password = ?";
-        
+
         User user = null;
         try {
             ps = con.prepareStatement(xSql);
             ps.setString(1, username);
             ps.setString(2, password);
-            
+
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -40,15 +40,15 @@ public class UserDAO extends MyDAO{
         }
         return user;
     }
-    
+
     public List<String> getUserNameList() {
         List<String> userNameList = new ArrayList<>();
-        
+
         xSql = "select userID from account ";
         try {
             ps = con.prepareStatement(xSql);
             rs = ps.executeQuery();
-            
+
             while (rs.next()) {
                 userNameList.add(rs.getString("userID"));
             }
@@ -58,5 +58,22 @@ public class UserDAO extends MyDAO{
             e.printStackTrace();
         }
         return userNameList;
+    }
+
+    public User insertUser(String username, String password) {
+        xSql = "Insert into account (username, password, role) values (?,?,?)";
+        User user = null;
+        try {
+            ps = con.prepareStatement(xSql);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ps.setString(3, "admin");
+            int x = ps.executeUpdate();
+            user = new User(username, password, "admin");
+            ps.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
     }
 }
