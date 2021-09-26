@@ -253,6 +253,7 @@ header {
   .nav-desktop ul {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   
   .nav-desktop ul li {
@@ -387,31 +388,3 @@ header {
     svg {
     transform: rotate(180deg);
   }
-  .search{
-      flex:0.3;
-      minn-width:75px;
-      background-color:white;
-      color:gray;
-      border-radius:30px;
-      padding: 14px 10px;
-      display:flex;
-      align-items:center;
-      transition:all 0.5s cubic-bezier(0.68,-0.55,0.265,1.55);
-  }
-  .search>i{
-      color:gray;
-  }
-  .search .fa-search {
-      right: 5px;
-      cursor: pointer;
-          /*    transform:translateY(-50%);*/
-  }
-  .search > input {
-          border: none;
-          width: 100%;
-   }
-  
-  .search.active{
-      width:140px;
-  }
-  

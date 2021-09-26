@@ -14,8 +14,7 @@
         <link rel="stylesheet" href="css/player.css">
         <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/header.css">
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" asp-append-version="true" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Player</title>
     </head>
@@ -140,7 +139,7 @@
             <div class="player_footer">
                 <div class="footer_left">
                     <img class="song_playing"
-                         src="" />
+                         src="https://upload.wikimedia.org/wikipedia/vi/4/4b/Ariana_Grande_-_Dangerous_Woman_%28Official_Album_Cover%29.png" />
                     <div class="song_info">
                         <h4 id="my_tittle"></h4>
                         <p id="my_artis"></p>
@@ -186,7 +185,23 @@
             </div>
         </div>
     </body>
-    <script>
+</html>
+
+
+<!-- Function list  
+    0.sync 2 play button control  --done
+    1.Render and display songs      --done
+    2.Play / pause /seek            --done
+    3. Next/prev control            --done
+    4. Random Songs control         -done
+    5.Next/Repeat when song ended       -done
+    6. Play song choosed in list when click on this song    --done
+    7.Active love_button,sync 2 love_button
+    8.Song active: music waves animation            --done
+    9.More_button display text info when click, sync 2 more
+    10.Volumn song control-->
+<!-- Player Process -->
+<script>
     const playlist = $('.playlist_song');
     const player_tittle = $('#my_tittle');
     const player_thumb = $('.song_playing');
@@ -206,67 +221,66 @@
         isRandom: false,
         isRepeat: false,
         songs: [
-             {
+            {
                 name: 'Real love',
                 singer: 'My Anh, Khac Hung',
-                path: './music/Reallove.mp3',
+                path: 'http://localhost:8080/MusicStreamingWeb/music/Reallove.mp3',
                 image: 'https://static.yeah1.com/uploads/editors/26/2021/07/30/gGOSwwQVwszafKF3HJAHQ5klSWXu3ji7KSJhqttP.jpg'
             },
             {
                 name: 'Co em doi bong vui',
                 singer: 'Chillies',
-                path: './music/Chillies.mp3',
+                path: 'http://localhost:8080/MusicStreamingWeb/music/Chillies.mp3',
                 image: 'https://images.genius.com/5822e08274e4684b00a177ff3ef2f33e.551x551x1.jpg'
             },
             {
                 name: 'Huong',
                 singer: 'Van Mai Huong',
-                path: './music/Huong.mp3',
+                path: 'http://localhost:8080/MusicStreamingWeb/music/Huong.mp3',
                 image: 'https://avatar-ex-swe.nixcdn.com/song/share/2021/01/22/7/e/7/0/1611280899564.jpg'
             },
             {
                 name: 'GENE',
                 singer: 'Binz',
-                path: './music/GENE.mp3',
+                path: 'http://localhost:8080/MusicStreamingWeb/music/GENE.mp3',
                 image: 'https://tudienwiki.com/wp-content/uploads/2020/09/Binz.png'
             },
             {
                 name: 'Krazy',
                 singer: 'Binz',
-                path: './music/Krazy.mp3',
+                path: 'http://localhost:8080/MusicStreamingWeb/music/Krazy.mp3',
                 image: 'https://avatar-nct.nixcdn.com/mv/2018/02/02/a/5/2/9/1517539425061_640.jpg'
             },
             {
                 name: 'Phai Chang Em Da Yeu',
                 singer: 'Juky San',
-                path: './music/Phaichangemdayeu.mp3',
+                path: 'http://localhost:8080/MusicStreamingWeb/music/Phaichangemdayeu.mp3',
                 image: 'https://i1.sndcdn.com/artworks-zEUVw9b46Eu9qGYe-eATUzg-t500x500.jpg'
             },
             {
                 name: 'Thang nam',
                 singer: 'Soobin Hoang Son',
-                path: './music/Thangnam.mp3',
+                path: 'http://localhost:8080/MusicStreamingWeb/music/Thangnam.mp3',
                 image: 'https://cdnmedia.thethaovanhoa.vn/Upload/3uPkfvAxvuOpUQrmKeiDaA/files/2021/08/B/22/playah_Fotor.jpg'
             },
             {
                 name: 'They Said',
                 singer: 'Binz',
-                path: './music/TheySaid.mp3',
+                path: 'http://localhost:8080/MusicStreamingWeb/music/TheySaid.mp3',
                 image: 'https://i.ytimg.com/vi/XdBsAXOxYfo/hqdefault.jpg'
             }
         ],
-        
+
         render: function () {
             const htmls = this.songs.map((song, index) => {
-                console.log(song.image)
-                return `
-       <div class="song_row \${index===this.currentIndex? 'song_active':''}" data-index="\${index}">
-            <img class="songRow_album" src="\${song.image}" />
+                return 
+        <div class="song_row ${index == this.currentIndex? 'song_active':''}" data-index="${index}">
+            <img class="songRow_album" src="${song.image}" />
                 <div class="songRow_info" style="width: 80%;">
-                   <h1>\${song.name}</h1>
-                      <p>\${song.singer}</p>
+                   <h1>${song.name}</h1>
+                      <p>${song.singer}</p>
                 </div>
-                <div class="loader \${index== this.currentIndex? 'playing':''}" >
+                <div class="loader ${index == this.currentIndex? 'playing':''}" >
                     <span class="stroke"></span>
                     <span class="stroke"></span>
                     <span class="stroke"></span>
@@ -279,7 +293,7 @@
                 <span style="padding:0 10px">04:23</span>
                 <i class="fas fa-ellipsis-h"></i>
         </div>
-    `
+    
             })
             playlist.html(htmls.join(''))
         },
@@ -361,6 +375,7 @@
                     audio.get(0).volume = slider.value / 100
                 }
             })
+
             //Handle continue playing when audio ended
             audio.get(0).onended = function () {
                 if (app.isRandom) {
@@ -480,19 +495,3 @@
 
     app.start()
 </script>
-</html>
-
-
-<!-- Function list  
-    0.sync 2 play button control  --done
-    1.Render and display songs      --done
-    2.Play / pause /seek            --done
-    3. Next/prev control            --done
-    4. Random Songs control         -done
-    5.Next/Repeat when song ended       -done
-    6. Play song choosed in list when click on this song    --done
-    7.Active love_button,sync 2 love_button
-    8.Song active: music waves animation            --done
-    9.More_button display text info when click, sync 2 more
-    10.Volumn song control-->
-<!-- Player Process -->
