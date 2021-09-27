@@ -34,11 +34,11 @@
                          src="https://www.w3schools.com/w3images/avatar5.png" alt="">
                     <div class="sidebar_option">
                         <i class="fas fa-home"></i>
-                        <a href="profile"><p>Account Overview</p></a>
+                        <a href="profile"><p>Profile Overview</p></a>
                     </div>
                     <div class="sidebar_option sidebar_active">
                         <i class="fas fa-pencil-alt"></i>
-                        <a href="editProfile"><p>Edit profile</p></a>
+                        <a href="account"><p>Edit profile</p></a>
                     </div>
                     <div class="sidebar_option">
                         <i class="fas fa-unlock"></i>
@@ -73,24 +73,19 @@
                     <div class="collection_header">
                         <h1>Profile Editing</h1>
                     </div>
-                    <form action="" style="margin: 20px 50px;">
+                    <form action="account" method="POST" style="margin: 20px 50px;">
+                        <h2 >Username</h2>
+                        <input type="text" class="form-control" name="username" value="${requestScope.user.username}" readonly>
+                        <h2 >Password</h2>
+                        <input type="password" class="form-control" name="password" value="${sessionScope.account.password}">
                         <h2 >Email</h2>
-                        <input type="text">
-                        <h2 >Sex</h2>
-                        <select name="sex" style="font-size:medium;font-weight:bold;">
-                            <option value="volvo">Male</option>
-                            <option value="saab">Female</option>
-                            <option value="mercedes">Other</option>
-                        </select>
-                        <h2 >Phone number</h2>
-                        <input type="text">
-                        <h2 >Phone number</h2>
-                        <input type="text">
+                        <input type="email" class="form-control" name="email" value="${requestScope.user.email}">
+                        <h2 >Fullname</h2>
+                        <input type="text" class="form-control" name="fullname" value="${requestScope.user.fullname}">
                         <div style="display: flex; justify-content:flex-end">
-                            <button class="cancel" href="#" style="background-color: white;color:black">Cancel</button>
-                            <button class="submit" href="#">Save</button>
+                            <button class="cancel" style="background-color: white;color:black"><a href="home">Cancel</a></button>
+                            <button class="submit" type="submit">Save</button>
                         </div>
-
                     </form>
 
                 </div>

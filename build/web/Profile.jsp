@@ -32,11 +32,11 @@
                          src="https://www.w3schools.com/w3images/avatar5.png" alt="">
                     <div class="sidebar_option  sidebar_active">
                         <i class="fas fa-home"></i>
-                        <a href="profile"><p>Account Overview</p></a>
+                        <a href="profile"><p>Profile Overview</p></a>
                     </div>
                     <div class="sidebar_option">
                         <i class="fas fa-pencil-alt"></i>
-                        <a href="editProfile"><p>Edit profile</p></a>
+                        <a href="account"><p>Edit profile</p></a>
                     </div>
                     <div class="sidebar_option">
                         <i class="fas fa-unlock"></i>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="colection_body">
                     <div class="collection_header">
-                        <h1>Account Overview</h1>
+                        <h1>Profile Overview</h1>
                     </div>
                     <h3 style="font-size: 24px;font-family: spotify-circular, Helvetica, Arial, sans-serif;
                         line-height: 32px;margin: 20px 50px;">Profile</h3>

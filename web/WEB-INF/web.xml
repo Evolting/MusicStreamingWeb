@@ -17,16 +17,24 @@
         <servlet-class>controller.ProfileServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>EditProfileServlet</servlet-name>
-        <servlet-class>controller.EditProfileServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>SearchServlet</servlet-name>
         <servlet-class>controller.SearchServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CloudinaryServlet</servlet-name>
         <servlet-class>controller.CloudinaryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AccountServlet</servlet-name>
+        <servlet-class>controller.AccountServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
@@ -45,10 +53,6 @@
         <url-pattern>/profile</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>EditProfileServlet</servlet-name>
-        <url-pattern>/editProfile</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
@@ -56,10 +60,21 @@
         <servlet-name>CloudinaryServlet</servlet-name>
         <url-pattern>/cloudinary</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountServlet</servlet-name>
+        <url-pattern>/account</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
 </web-app>
-

@@ -20,14 +20,24 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
               asp-append-version="true" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .login_button {
+                color: white; 
+                font-weight: bold; 
+                font-size: medium
+            }
+
+            .login_button:hover {
+                color: blue;
+            }
+        </style>
         <title>Home</title>
     </head>
     <body>
         <header>
             <div class="header-container">
                 <div class="header-logo">
-                    <a href="home"><img
-                            src="https://cdn.freebiesupply.com/logos/thumbs/2x/gitlab-logo.png" /></a>
+                    <a href="home"><img src="img/logo.png" style="width: 25%; height: 25%;"/></a>
                 </div>
                 <nav class="nav-mobile">
                     <!-- Profile -->
@@ -79,7 +89,7 @@
                         </li>
                         <li><a href="#">Premium</a></li>
                         <li><a href="#">Help</a></li>
-                        <li><a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a></li>
+                        <li><a href="#">Privacy</a></li>
                         <li role="separator"></li>
                     </ul>
 
@@ -93,7 +103,7 @@
                             <div class="dropdown-menu">
                                 <ul> 
                                     <li><a href="profile">Account</a></li>
-                                    <li><a href="#">Log out</a></li>
+                                    <li><a href="logout">Log out</a></li>
                                 </ul>
                             </div>
                             <div class="profile">

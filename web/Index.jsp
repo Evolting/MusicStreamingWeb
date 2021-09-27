@@ -86,59 +86,16 @@
                 </div>
                 <div class="albums-cards-container">
                     <!-- Travis Scott -->
-                    <div class="album">
-                        <img src="https://i.scdn.co/image/ab67706f0000000236f70792450e32a6af85dbf6" />
-                        <div class="album-info">
-                            <h2>FRANCHISE (feat. Young Thug & M.I.A.)</h2>
-                            <h4>Travis Scott</h4>
-                            <a href="#">PLAY NOW</a>
+                    <c:forEach items="${requestScope.top6}" var="song">
+                        <div class="album">
+                            <img src="${song.img}" />
+                            <div class="album-info">
+                                <h2>${song.name}</h2>
+                                <h4>Travis Scott</h4>
+                                <a href="player?id=${song.songID}">PLAY NOW</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- ZAYN -->
-                    <div class="album">
-                        <img src="https://pbs.twimg.com/media/EsSnah7W4AM8nWX.jpg" />
-                        <div class="album-info">
-                            <h2>Better</h2>
-                            <h4>ZAYN</h4>
-                            <a href="#">PLAY NOW</a>
-                        </div>
-                    </div>
-                    <!-- Joji -->
-                    <div class="album">
-                        <img src="https://i.pinimg.com/736x/3d/44/b1/3d44b17d4872e11e6447aa381fec1a8f.jpg" />
-                        <div class="album-info">
-                            <h2>Justin Bieber</h2>
-                            <h4>Joji</h4>
-                            <a href="#">PLAY NOW</a>
-                        </div>
-                    </div>
-                    <!-- Jennifer Lopez -->
-                    <div class="album">
-                        <img src="https://image.thanhnien.vn/1024/uploaded/hoalp/2021_07_30/billie-eilish-happier-than-ever_vfyn.jpeg" />
-                        <div class="album-info">
-                            <h2>Happier Than Ever</h2>
-                            <h4>Billie Eilish</h4>
-                            <a href="player.html">PLAY NOW</a>
-                        </div>
-                    </div>
-                    <!-- Machine Gun Kelly -->
-                    <div class="album">
-                        <img src="https://i-english.vnecdn.net/2020/05/15/playlist-thoai-mai-gac-chan-le-7831-7045-1589528794_m_460x0.jpg" />
-                        <div class="album-info">
-                            <h2>Vu Cat Tuong</h2>
-                            <h4>Album Playlist</h4>
-                            <a href="#">PLAY NOW</a>
-                        </div>
-                    </div>
-                    <!-- Cold -->
-                    <div class="album">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273c1b0465012a1c380e3b5d988" />
-                        <div class="album-info">
-                            <h2>Year Collection</h2>
-                            <h4>Best Song US-UK</h4>
-                            <a href="#">PLAY NOW</a>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
 

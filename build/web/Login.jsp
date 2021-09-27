@@ -18,9 +18,9 @@
 </head>
 <body>
     <div class="big_container">
-        <div class="login_container" id="login_container">
+        <div class="login_container ${requestScope.errorRegister != null?"right-panel-active":""}" id="login_container">
             <div class="form-container sign-up-container">
-                <form action="#">
+                <form action="register" method="POST">
                     <h1 class="login_account">Create Account</h1>
                     <div class="social-container">
                         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -28,14 +28,16 @@
                         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <span style="font-size: 12px ">or use your email for registration</span>
-                    <input class="input" type="text" placeholder="Name" />
-                    <input class="input" type="email" placeholder="Email" />
-                    <input class="input" type="password" placeholder="Password" />
-                    <button id="button"> Sign Up</button>
+                    <input class="input" type="text" placeholder="Username" name="username"/>
+                    <input class="input" type="email" placeholder="Email" name="email"/>
+                    <input class="input" type="password" placeholder="Password" name="password"/>
+                    <input class="input" type="text" placeholder="Fullname" name="fullname"/>
+                    <button id="button" type="submit"> Sign Up</button>
+                    <h4 style="color: red">${requestScope.errorRegister}</h4>
                 </form>
             </div>
             <div class="form-container sign-in-container">
-                <form action="#">
+                <form action="login" method="POST">
                     <h1 class="login_account">Sign in</h1>
                     <div class="social-container">
                         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -43,10 +45,11 @@
                         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <span style="font-size: 12px">or use your account</span>
-                    <input class="input" type="email" placeholder="Email" />
-                    <input class="input" type="password" placeholder="Password" />
+                    <input class="input" type="text" placeholder="Username" name="username"/>
+                    <input class="input" type="password" placeholder="Password" name="password"/>
                     <a href="#">Forgot your password?</a>
-                    <button id="button">Sign In</button>
+                    <button id="button" type="submit">Sign In</button>
+                    <h4 style="color: red">${requestScope.error}</h4>
                 </form>
             </div>
             <div class="overlay-container">

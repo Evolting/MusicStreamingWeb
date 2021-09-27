@@ -1,20 +1,21 @@
 package controller;
 
 import dal.AccountDAO;
+import dal.UserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import model.Account;
+import model.User;
 
 /**
  *
  * @author admin
  */
-public class LoginServlet extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,10 +34,10 @@ public class LoginServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");            
+            out.println("<title>Servlet RegisterServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet RegisterServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -54,7 +55,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("Login.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -68,17 +69,30 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        
+            PrintWriter out = response.getWriter();
+//            out.print(request.getParameter("username")+" "+request.getParameter("password"));
+        String u = request.getParameter("username");
+        String p = request.getParameter("password");
+        String name = request.getParameter("fullname");
+        String email = request.getParameter("email");
         AccountDAO db = new AccountDAO();
-        Account a = db.getAccount(username, password);
-        if (a == null) {
-            request.setAttribute("error", "Tài khoản " + username + " không tồn tại");
+        UserDAO udb = new UserDAO();
+        Account a = db.getAccount(u, p);
+//        out.print(a);
+
+        if (u.isEmpty() || p.isEmpty() || name.isEmpty() || email.isEmpty()) {
+            request.setAttribute("errorRegister", "You need to fill all the blanks");
             request.getRequestDispatcher("Login.jsp").forward(request, response);
         } else {
-            HttpSession session = request.getSession();
-            session.setAttribute("account", a);
-            response.sendRedirect("home");
+            if (a != null || db.checkUser(u) == true) {
+                request.setAttribute("errorRegister", "This Account existed!!");
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
+            } else {
+                db.create(new Account(u, p, "user"));
+                udb.addUserInfo(new User(u, name, email, "normal"));
+                response.sendRedirect("Login.jsp");
+            }
         }
     }
 
