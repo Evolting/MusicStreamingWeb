@@ -87,8 +87,7 @@ public class AccountServlet extends HttpServlet {
 
         cdb.updateUser(fullname, newmail, username);
         adb.updateAccount(username, newpass);
-        request.setAttribute("mess", "Your profile had been changed");
-        request.getRequestDispatcher("account").forward(request, response);
+        response.sendRedirect("account");
     }
 
     /**

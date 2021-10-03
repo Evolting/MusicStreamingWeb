@@ -71,6 +71,6 @@ public class AccountDAO extends DBContext{
     
     public static void main(String[] args) {
         AccountDAO a = new AccountDAO();
-        System.out.println(a.getAccount("long", "123"));
+        System.out.println(a.checkUser("long"));
     }
 }

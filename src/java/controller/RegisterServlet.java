@@ -76,20 +76,23 @@ public class RegisterServlet extends HttpServlet {
         AccountDAO db = new AccountDAO();
         UserDAO udb = new UserDAO();
         Account a = db.getAccount(u, p);
+        
+        PrintWriter out = response.getWriter();
 
         if (u.isEmpty() || p.isEmpty() || name.isEmpty() || email.isEmpty()) {
             request.setAttribute("errorRegister", "You need to fill all the blanks");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("Login.jsp").forward(request, response);
         } else {
             if (a != null || db.checkUser(u) == true) {
                 request.setAttribute("errorRegister", "This Account existed!!");
-                request.getRequestDispatcher("login").forward(request, response);
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
             } else {
                 db.create(new Account(u, p, "user"));
-                udb.addUserInfo(new User(name, name, email, "normal"));
+                udb.addUserInfo(new User(u, name, email, "normal"));
                 response.sendRedirect("login");
             }
         }
+        
     }
 
     /**
