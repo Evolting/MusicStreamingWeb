@@ -69,6 +69,9 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+            PrintWriter out = response.getWriter();
+//            out.print(request.getParameter("username")+" "+request.getParameter("password"));
         String u = request.getParameter("username");
         String p = request.getParameter("password");
         String name = request.getParameter("fullname");
@@ -76,8 +79,7 @@ public class RegisterServlet extends HttpServlet {
         AccountDAO db = new AccountDAO();
         UserDAO udb = new UserDAO();
         Account a = db.getAccount(u, p);
-        
-        PrintWriter out = response.getWriter();
+//        out.print(a);
 
         if (u.isEmpty() || p.isEmpty() || name.isEmpty() || email.isEmpty()) {
             request.setAttribute("errorRegister", "You need to fill all the blanks");
@@ -89,10 +91,9 @@ public class RegisterServlet extends HttpServlet {
             } else {
                 db.create(new Account(u, p, "user"));
                 udb.addUserInfo(new User(u, name, email, "normal"));
-                response.sendRedirect("login");
+                response.sendRedirect("Login.jsp");
             }
         }
-        
     }
 
     /**

@@ -5,12 +5,19 @@
  */
 package controller;
 
+import dal.PlaylistDAO;
+import dal.SongDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.Account;
+import model.Playlist;
+import model.Song;
 
 /**
  *
@@ -35,7 +42,7 @@ public class HomeServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet HomeServlet</title>");            
+            out.println("<title>Servlet HomeServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet HomeServlet at " + request.getContextPath() + "</h1>");
@@ -56,7 +63,25 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("Index.jsp").forward(request, response);
+        
+        SongDAO sdb = new SongDAO();
+
+        List<Song> top6 = sdb.getMostLike();
+        request.setAttribute("top6", top6);
+        
+        List<Song> latest = sdb.getLatest();
+        request.setAttribute("latest", latest);
+        
+        HttpSession session = request.getSession();
+        if (session.getAttribute("account") != null) {
+            Account a = (Account) session.getAttribute("account");
+            PlaylistDAO listDAO = new PlaylistDAO();
+            List<Playlist> listPlay = listDAO.getAllList(a.getUsername());
+            request.setAttribute("listP", listPlay);
+        }
+        
+        request.setAttribute("currentPage", "Home");
+        request.getRequestDispatcher("Home.jsp").forward(request, response);
     }
 
     /**

@@ -20,14 +20,24 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
               asp-append-version="true" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .login_button {
+                color: white; 
+                font-weight: bold; 
+                font-size: medium
+            }
+
+            .login_button:hover {
+                color: blue;
+            }
+        </style>
         <title>Home</title>
     </head>
     <body>
         <header>
             <div class="header-container">
                 <div class="header-logo">
-                    <a href="home"><img
-                            src="https://cdn.freebiesupply.com/logos/thumbs/2x/gitlab-logo.png" /></a>
+                    <a href="home"><img src="img/logo.png" style="width: 25%; height: 25%;"/></a>
                 </div>
                 <nav class="nav-mobile">
                     <!-- Profile -->
@@ -70,16 +80,20 @@
                 <nav class="nav-desktop">
                     <!-- Site menu -->
                     <ul>
-                        <li >
-                            <div class="sample two">
-                                <input class="search" type="text" name="search" placeholder="Search">
-                                <button type="submit" class="btn btn-search fa fa-search"></button>
-                                <button type="reset" class="btn btn-reset fa fa-times"></button>
-                            </div>
+                        <li>
+                            <form action="search">
+                                <div class="sample two">
+                                    <input class="search" type="search" name="query" placeholder="Search">
+                                    <button type="submit" class="btn btn-search fa fa-search"></button>
+                                </div>
+                            </form>
                         </li>
                         <li><a href="#">Premium</a></li>
                         <li><a href="#">Help</a></li>
-                        <li><a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a></li>
+                        <li><a href="https://webcache.googleusercontent.com/search?q=cache:zz9lg7qXuF4J:https://www.cse.msu.edu/~cse435/Handouts/SRSExample-webapp.doc+&cd=2&hl=vi&ct=clnk&gl=vn" target="_blank">
+                                Privacy
+                            </a>
+                        </li>
                         <li role="separator"></li>
                     </ul>
 
@@ -92,7 +106,7 @@
                             <input type="checkbox" class="dropdown-menu-toggler" />
                             <div class="dropdown-menu">
                                 <ul> 
-                                    <li><a href="account">Account</a></li>
+                                    <li><a href="profile">Account</a></li>
                                     <li><a href="logout">Log out</a></li>
                                 </ul>
                             </div>
@@ -104,7 +118,7 @@
                                 </svg>
                             </div>
                             <ul>
-                                <li>Profile</li>
+                                <li>${sessionScope.account.username}</li>
                                 <li>
                                     <svg viewBox="0 0 1024 1024" class="profile-arrow">
                                     <path

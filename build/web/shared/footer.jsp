@@ -25,7 +25,7 @@
         <footer>
             <nav class="footer-nav">
                 <div class="logo-footer">
-                    <a href="#"><img src="https://cdn.freebiesupply.com/logos/thumbs/2x/gitlab-logo.png" /></a>
+                    <a href="#"><img src="img/logo.png" style="width: 25%; height: 25%;"/></a>
                 </div>
                 <div class="top-links">
                     <div class="company-links">
@@ -50,7 +50,7 @@
                         <ul>
                             <li>USEFUL LINKS</li>
                             <li><a href="#">Help</a></li>
-                            <li><a href="#">Web Player</a></li>
+                            <li><a href="search">Web Player</a></li>
                             <li><a href="#">Free Mobile App</a></li>
                         </ul>
                     </div>
@@ -92,7 +92,7 @@
                         <li><a href="#">About Ads</a></li>
                         <li><a href="#">Additional CA Privacy Disclosures</a></li>
                     </ul>
-                    <span>&copy; 2020 Spotify AB</span>
+                    <span>&copy; 2020 MSW AB</span>
                 </div>
             </nav>
         </footer>

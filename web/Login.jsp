@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" asp-append-version="true" />
-    <title>Document</title>
+    
+    <title>Login</title>
 </head>
 <body>
     <div class="big_container">
-        <div class="login_container" id="login_container">
+        <div class="login_container ${requestScope.errorRegister != null?"right-panel-active":""}" id="login_container">
             <div class="form-container sign-up-container">
                 <form action="register" method="POST">
                     <h1 class="login_account">Create Account</h1>
@@ -33,6 +34,7 @@
                     <input class="input" type="password" placeholder="Password" name="password"/>
                     <input class="input" type="text" placeholder="Fullname" name="fullname"/>
                     <button id="button" type="submit"> Sign Up</button>
+                    <h4 style="color: red">${requestScope.errorRegister}</h4>
                 </form>
             </div>
             <div class="form-container sign-in-container">
@@ -48,7 +50,7 @@
                     <input class="input" type="password" placeholder="Password" name="password"/>
                     <a href="#">Forgot your password?</a>
                     <button id="button" type="submit">Sign In</button>
-                    
+                    <h4 style="color: red">${requestScope.error}</h4>
                 </form>
             </div>
             <div class="overlay-container">

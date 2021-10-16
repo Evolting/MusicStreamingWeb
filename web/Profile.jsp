@@ -27,49 +27,10 @@
 
         <div class="player">
             <div class="player_body">
-                <div class="side_bar_home">
-                    <img style="width: 70px;border-radius:50%;margin-left:32%; margin-bottom:20px"
-                         src="https://www.w3schools.com/w3images/avatar5.png" alt="">
-                    <div class="sidebar_option  sidebar_active">
-                        <i class="fas fa-home"></i>
-                        <a href="profile"><p>Account Overview</p></a>
-                    </div>
-                    <div class="sidebar_option">
-                        <i class="fas fa-pencil-alt"></i>
-                        <a href="editProfile"><p>Edit profile</p></a>
-                    </div>
-                    <div class="sidebar_option">
-                        <i class="fas fa-unlock"></i>
-                        <p>
-                            Password changing
-                        </p>
-                    </div>
-
-                    <div class="sidebar_option">
-                        <i class="fas fa-podcast"></i>
-                        <p>
-                            Manage playlist
-                        </p>
-
-                    </div>
-                    <div class="sidebar_option">
-                        <i class="fas fa-bell"></i>
-                        <p>
-                            Manage Notification
-                        </p>
-
-                    </div>
-                    <div class="sidebar_option">
-                        <i class="fas fa-record-vinyl"></i>
-                        <p>
-                            Contract information
-                        </p>
-
-                    </div>
-                </div>
+                <%@include file="shared/sidebarAccount.jsp" %>
                 <div class="colection_body">
                     <div class="collection_header">
-                        <h1>Account Overview</h1>
+                        <h1>Profile Overview</h1>
                     </div>
                     <h3 style="font-size: 24px;font-family: spotify-circular, Helvetica, Arial, sans-serif;
                         line-height: 32px;margin: 20px 50px;">Profile</h3>
@@ -81,23 +42,23 @@
                         <tbody>
                             <tr>
                                 <td style="color: #b3b3b3;">User name</td>
-                                <td style="font-weight:bold">I'm user's name</td>
+                                <td style="font-weight:bold">${requestScope.user.username}</td>
+                            </tr>
+                            <tr>
+                                <td style="color: #b3b3b3;">Full Name</td>
+                                <td style="font-weight:bold">${requestScope.user.fullname}</td>
                             </tr>
                             <tr>
                                 <td style="color: #b3b3b3;">Email</td>
-                                <td style="font-weight:bold">I'm user's email </td>
+                                <td style="font-weight:bold">${requestScope.user.email}</td>
                             </tr>
                             <tr>
-                                <td style="color: #b3b3b3;">Date of birth</td>
-                                <td style="font-weight:bold">19 tháng 11, 2000</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #b3b3b3;">Region</td>
-                                <td style="font-weight:bold">Việt Nam</td>
+                                <td style="color: #b3b3b3;">Status</td>
+                                <td style="font-weight:bold">${requestScope.user.status}</td>
                             </tr>
                         </tbody>
                     </table>
-                    <a href="editProfile"><button class="submit">Edit profile</button></a>
+                    <a href="account"><button class="submit">Edit profile</button></a>
                 </div>
 
             </div>
